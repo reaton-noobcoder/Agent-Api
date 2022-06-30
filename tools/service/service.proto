@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "tools/service";
+
+package service;
+
+service Hello {
+    rpc SayHello(stream HelloRequest) returns (stream HelloReply){}
+}
+
+message HelloRequest {
+    string reg = 1;
+}
+
+message HelloReply {
+    string reply = 1;
+}
